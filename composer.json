@@ -1,9 +1,15 @@
 {
     "name": "phumsoft/phumpie",
     "description": "The package is using for custom default laravel package",
-    "homepage": "https://github.com/chantouchsek/laravel-addresses",
+    "homepage": "https://github.com/phumsoft/phumpie",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "phumsoft",
+        "silak",
+        "phumpie",
+        "laravel"
+    ],
     "autoload": {
         "psr-4": {
             "Phumsoft\\Phumpie\\": "src/"
@@ -11,8 +17,8 @@
     },
     "authors": [
         {
-            "name": "Phumsoft",
-            "email": "phumsoft@gmail.com",
+            "name": "Silak",
+            "email": "chhumsilak@gmail.com",
             "role": "developer"
         }
     ],
