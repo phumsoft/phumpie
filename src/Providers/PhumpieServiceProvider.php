@@ -1,6 +1,6 @@
 <?php
 
-namespace Phumpie\Providers;
+namespace Phumsoft\Phumpie\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

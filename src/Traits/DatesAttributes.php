@@ -1,6 +1,6 @@
 <?php
 
-namespace Phumsoft\Core\Traits;
+namespace Phumsoft\Phumpie\Traits;
 
 use DateTimeInterface;
 

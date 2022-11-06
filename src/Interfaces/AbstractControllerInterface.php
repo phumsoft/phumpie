@@ -1,6 +1,6 @@
 <?php
 
-namespace Phumpie\Interfaces;
+namespace Phumsoft\Phumpie\Interfaces;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -19,7 +19,7 @@ interface AbstractControllerInterface
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response|Phumpie\Core\Models\BaseModel
+     * @return \Illuminate\Http\Response|Phumsoft\Phumpie\Core\Models\BaseModel
      */
     public function store(Request $request);
 
@@ -37,7 +37,7 @@ interface AbstractControllerInterface
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse|Phumpie\Core\Models\BaseModel
+     * @return \Illuminate\Http\JsonResponse|Phumsoft\Phumpie\Core\Models\BaseModel
      */
     public function update(Request $request, int $id);
 

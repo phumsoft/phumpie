@@ -1,6 +1,6 @@
 <?php
 
-namespace Phumsoft\Core\Controllers;
+namespace Phumsoft\Phumpie\Core\Controllers;
 
 use App\Http\Controllers\Core\Controller;
 use Illuminate\Http\Request;

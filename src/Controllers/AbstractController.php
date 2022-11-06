@@ -1,14 +1,14 @@
 <?php
 
-namespace Phumpie\Controllers;
+namespace Phumsoft\Phumpie\Controllers;
 
 use App\Constants\CAbility;
 use App\Constants\CModule;
 use App\Http\Controllers\Core\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Phumpie\Interfaces\AbstractControllerInterface;
-use Phumpie\Models\Model;
+use Phumsoft\Phumpie\Interfaces\AbstractControllerInterface;
+use Phumsoft\Phumpie\Models\Model;
 use Prettus\Validator\Exceptions\ValidatorException;
 
 abstract class AbstractController extends Controller implements AbstractControllerInterface

@@ -1,6 +1,6 @@
 <?php
 
-namespace Phumpie\Models;
+namespace Phumsoft\Phumpie\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model as BaseModel;

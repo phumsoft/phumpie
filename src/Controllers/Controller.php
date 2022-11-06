@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Core;
+namespace Phumsoft\Phumpie\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
-use Phumpie\Traits\Restable;
+use Phumsoft\Phumpie\Traits\Restable;
 
 class Controller extends BaseController
 {

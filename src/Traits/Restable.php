@@ -1,6 +1,6 @@
 <?php
 
-namespace Phumpie\Traits;
+namespace Phumsoft\Phumpie\Traits;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response as IlluminateResponse;
