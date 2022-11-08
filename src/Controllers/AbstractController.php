@@ -2,11 +2,10 @@
 
 namespace Phumsoft\Phumpie\Controllers;
 
-use App\Constants\CAbility;
 use App\Constants\CModule;
-use App\Http\Controllers\Core\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Phumsoft\Phumpie\Constants\CAbility;
 use Phumsoft\Phumpie\Interfaces\AbstractControllerInterface;
 use Phumsoft\Phumpie\Models\Model;
 use Prettus\Validator\Exceptions\ValidatorException;
@@ -17,19 +16,22 @@ abstract class AbstractController extends Controller implements AbstractControll
      * @var object
      */
     protected object $module;
-
+    /**
+     * @var string
+     */
     protected string $name;
-
+    /**
+     * @var string
+     */
     protected string $fileKey = 'myFile';
-
+    /**
+     * @var bool
+     */
     protected bool $skipResponse = false;
-
+    /**
+     * @var bool
+     */
     protected bool $skipAuthorize = false;
-
-    public function __construct()
-    {
-        $this->skipAuthorize = $this->module === CModule::PUBLIC;
-    }
 
     /**
      * Display a listing of the resource.

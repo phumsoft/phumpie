@@ -1,25 +1,21 @@
 <?php
 
-namespace Phumsoft\Phumpie\Core\Controllers;
+namespace Phumsoft\Phumpie\Controllers;
 
-use App\Http\Controllers\Core\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-abstract class AbstractHomeWebController extends Controller
+abstract class AbstractHomeWebController extends Controller implements AbstractHomeWebControllerInterface
 {
-    protected $data = [];
+    /**
+     * @var array
+     */
+    protected array $data = [];
 
     /**
      * @var string
      */
     protected string $name = '';
-
-    public function __construct()
-    {
-    }
-
-    abstract protected function companyInfo(int $company_id);
 
     /**
      * Show the loan dashboard.
@@ -46,10 +42,10 @@ abstract class AbstractHomeWebController extends Controller
         $user->last_selected_id = $company_id;
         $this->companyInfo($user->last_selected_id);
 
-        return $this->render_view('home');
+        return $this->renderView('home');
     }
 
-    protected function render_view($name)
+    protected function renderView($name)
     {
         return view($name, $this->data);
     }

@@ -19,7 +19,7 @@ interface AbstractControllerInterface
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response|Phumsoft\Phumpie\Core\Models\BaseModel
+     * @return \Illuminate\Http\Response|Phumsoft\Phumpie\Models\Model
      */
     public function store(Request $request);
 
@@ -37,7 +37,7 @@ interface AbstractControllerInterface
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse|Phumsoft\Phumpie\Core\Models\BaseModel
+     * @return \Illuminate\Http\JsonResponse|Phumsoft\Phumpie\Models\Model
      */
     public function update(Request $request, int $id);
 
