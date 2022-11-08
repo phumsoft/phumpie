@@ -8,12 +8,12 @@ A custom package for custom code structure, reduce rewrite common logic for lara
 
 ## Installation
 
-This package requires Laravel 9.x or later running on PHP 8.1å or higher.
+This package requires Laravel 9.x or later running on PHP 8.1 or higher.
 
 This package can be installed using composer:
 
 ```
-composer require phumpie/phumpie
+composer require phumsoft/phumpie
 ```
 
 ## License
