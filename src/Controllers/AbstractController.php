@@ -2,7 +2,6 @@
 
 namespace Phumsoft\Phumpie\Controllers;
 
-use App\Constants\CModule;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Phumsoft\Phumpie\Constants\CAbility;
@@ -16,18 +15,22 @@ abstract class AbstractController extends Controller implements AbstractControll
      * @var object
      */
     protected object $module;
+
     /**
      * @var string
      */
     protected string $name;
+
     /**
      * @var string
      */
     protected string $fileKey = 'myFile';
+
     /**
      * @var bool
      */
     protected bool $skipResponse = false;
+
     /**
      * @var bool
      */
