@@ -13,7 +13,14 @@
     "autoload": {
         "psr-4": {
             "Phumsoft\\Phumpie\\": "src/"
-        }
+        },
+        "files": [
+            "src/Helpers/url.php",
+            "src/Helpers/string.php",
+            "src/Helpers/header.php",
+            "src/Helpers/collection.php",
+            "src/Helpers/translation.php"
+        ]
     },
     "authors": [
         {
