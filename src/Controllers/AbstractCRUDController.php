@@ -7,9 +7,8 @@ use Illuminate\Http\Request;
 use Phumsoft\Phumpie\Constants\CAbility;
 use Phumsoft\Phumpie\Interfaces\AbstractControllerInterface;
 use Phumsoft\Phumpie\Models\Model;
-use Prettus\Validator\Exceptions\ValidatorException;
 
-abstract class AbstractController extends Controller implements AbstractControllerInterface
+abstract class AbstractCRUDController extends Controller implements AbstractControllerInterface
 {
     /**
      * @var object
@@ -48,13 +47,7 @@ abstract class AbstractController extends Controller implements AbstractControll
             $this->authorize(CAbility::READ, $this->module);
         }
 
-        $items = $this->repository->toList();
-
-        if ($this->skipResponse === true) {
-            return $items;
-        }
-
-        return $this->respond($items);
+        return $this->repository->toList();
     }
 
     /**
@@ -75,16 +68,8 @@ abstract class AbstractController extends Controller implements AbstractControll
         if ($request->hasFile($this->fileKey)) {
             $attributes[$this->fileKey] = $request->file($this->fileKey);
         }
-        if ($request->company) {
-            $attributes['company_id'] = $request->company->id;
-        }
-        try {
-            $data = $this->repository->create($attributes);
 
-            return $this->skipResponse === true ? $data : $this->respondWithMessage('created', $data);
-        } catch (ValidatorException $e) {
-            return $this->respondWithWarning($e->getMessageBag());
-        }
+        return $this->repository->create($attributes);
     }
 
     /**
@@ -100,13 +85,7 @@ abstract class AbstractController extends Controller implements AbstractControll
             $this->authorize(CAbility::READ, $this->name);
         }
 
-        if ($request->get('withTrashed', false)) {
-            $this->repository->pushCriteria(WithTrashedCriteria::class);
-        }
-
-        $this->repository->skipPresenter();
-
-        return $this->respond($this->repository->find($id));
+        return $this->repository->find($id);
     }
 
     /**
@@ -128,17 +107,8 @@ abstract class AbstractController extends Controller implements AbstractControll
         if ($request->hasFile($this->fileKey)) {
             $attributes[$this->fileKey] = $request->file($this->fileKey);
         }
-        if ($request->company) {
-            $attributes['company_id'] = $request->company->id;
-        }
 
-        try {
-            $data = $this->repository->update($attributes, $id);
-
-            return $this->skipResponse === true ? $data : $this->respondWithMessage('updated', $data);
-        } catch (ValidatorException $e) {
-            return $this->respondWithWarning($e->getMessageBag());
-        }
+        return $this->repository->update($attributes, $id);
     }
 
     /**
@@ -154,13 +124,6 @@ abstract class AbstractController extends Controller implements AbstractControll
         if ($this->skipAuthorize === false) {
             $this->authorize(CAbility::DELETE, $this->name);
         }
-
-        try {
-            $data = $this->repository->delete($id);
-
-            return $this->skipResponse === true ? $data : $this->respondWithMessage('deleted', $data);
-        } catch (ValidatorException $e) {
-            return $this->respondWithWarning($e->getMessageBag());
-        }
+        return $this->repository->delete($id);
     }
 }
