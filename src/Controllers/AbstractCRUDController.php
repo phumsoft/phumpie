@@ -124,6 +124,7 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
         if ($this->skipAuthorize === false) {
             $this->authorize(CAbility::DELETE, $this->name);
         }
+
         return $this->repository->delete($id);
     }
 }
