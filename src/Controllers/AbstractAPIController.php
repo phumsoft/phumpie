@@ -2,7 +2,6 @@
 
 namespace Phumsoft\Phumpie\Controllers;
 
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response as IlluminateResponse;
 use Phumsoft\Phumpie\Models\Model;
