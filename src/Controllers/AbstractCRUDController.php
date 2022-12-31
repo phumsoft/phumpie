@@ -11,11 +11,6 @@ use Phumsoft\Repository\Repositories\Repository;
 abstract class AbstractCRUDController extends Controller implements AbstractControllerInterface
 {
     /**
-     * @var Repository
-     */
-    protected Repository $repository;
-
-    /**
      * @var bool
      */
     protected $skipResponse = false;
