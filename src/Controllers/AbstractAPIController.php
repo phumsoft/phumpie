@@ -35,7 +35,7 @@ abstract class AbstractAPIController extends AbstractCRUDController
      * Store a newly created resource in storage.
      *
      * @param  Request  $request
-     * @return JsonResponse|Model
+     * @return \Illuminate\Http\Response|Model
      */
     public function store(Request $request)
     {
@@ -56,7 +56,7 @@ abstract class AbstractAPIController extends AbstractCRUDController
      *
      * @param  Request  $request
      * @param  int  $id
-     * @return JsonResponse|Model
+     * @return \Illuminate\Http\Response|Phumsoft\Phumpie\Models\Model
      */
     public function update(Request $request, int $id)
     {
@@ -76,7 +76,7 @@ abstract class AbstractAPIController extends AbstractCRUDController
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return JsonResponse|bool
+     * @return \Illuminate\Http\Response|Phumsoft\Phumpie\Models\Model
      *
      * @throws Throwable
      */
@@ -98,7 +98,7 @@ abstract class AbstractAPIController extends AbstractCRUDController
      * Transform the respond validation exception message
      *
      * @param  ValidatorException  $e The validator exception
-     * @return JsonResponse The json response
+     * @return \Illuminate\Http\Response|Phumsoft\Phumpie\Models\Model The json response
      */
     private function respondValidatorException(ValidatorException $e)
     {

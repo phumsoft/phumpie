@@ -43,7 +43,7 @@ trait Restable
      * @param  array  $headers The given headers
      * @return JsonResponse The JSON-response
      */
-    public function respond($data, array $headers = []): JsonResponse
+    protected function respond($data, array $headers = []): JsonResponse
     {
         return Response::json($data, $this->getStatusCode(), $headers);
     }
@@ -57,7 +57,7 @@ trait Restable
      * @param  array  $headers The given headers
      * @return JsonResponse The JSON-response
      */
-    public function respondWithMessage(array|string $message = 'Item has been created.', mixed $data = [], array $headers = []): JsonResponse
+    protected function respondWithMessage(array|string $message = 'Item has been created.', mixed $data = [], array $headers = []): JsonResponse
     {
         if (is_array($message)) {
             $message = Arr::first($message, null, 'message');
@@ -103,7 +103,7 @@ trait Restable
      * @param  array  $headers The headers that should be send with the JSON-response
      * @return JsonResponse The JSON-response with the error message
      */
-    public function respondWithError(array|string $message, mixed $data = [], array $headers = []): JsonResponse
+    protected function respondWithError(array|string $message, mixed $data = [], array $headers = []): JsonResponse
     {
         $this->setStatusCode(IlluminateResponse::HTTP_INTERNAL_SERVER_ERROR);
 
