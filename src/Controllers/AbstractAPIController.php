@@ -24,12 +24,9 @@ abstract class AbstractAPIController extends AbstractCRUDController
         }
 
         try {
-            $created = parent::store($request);
-            $message = __('message.success.create', ['name' => $this->name]);
+            $items = parent::index($request);
 
-            $this->setStatusCode(IlluminateResponse::HTTP_CREATED);
-
-            return $this->respondWithMessage($message, $created);
+            return $this->respond($items);
         } catch (ValidatorException $e) {
             return $this->respondValidatorException($e);
         }
