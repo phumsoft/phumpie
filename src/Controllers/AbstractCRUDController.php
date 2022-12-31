@@ -4,7 +4,6 @@ namespace Phumsoft\Phumpie\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Phumsoft\Phumpie\Constants\CAbility;
 use Phumsoft\Phumpie\Interfaces\AbstractControllerInterface;
 use Phumsoft\Phumpie\Models\Model;
 
@@ -24,11 +23,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
      * @var string
      */
     protected string $fileKey = 'myFile';
-
-    /**
-     * @var bool
-     */
-    protected bool $skipResponse = false;
 
     /**
      * Display a listing of the resource.
