@@ -37,7 +37,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
 
     public function __construct()
     {
-        $this->skipResponse = $this->repository->skipPresenter;
     }
 
     /**
