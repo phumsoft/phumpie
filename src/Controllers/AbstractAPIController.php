@@ -11,6 +11,7 @@ abstract class AbstractAPIController extends AbstractCRUDController
 {
     public function __construct()
     {
+        parent::__construct();
     }
 
     /**
@@ -23,6 +24,8 @@ abstract class AbstractAPIController extends AbstractCRUDController
     {
         try {
             $items = parent::index($request);
+
+            if ($this->skipResponse) return $items;
 
             return $this->respond($items);
         } catch (ValidatorException $e) {
@@ -40,6 +43,8 @@ abstract class AbstractAPIController extends AbstractCRUDController
     {
         try {
             $created = parent::store($request);
+            if ($this->skipResponse) return $created;
+
             $message = __('message.success.create', ['name' => $this->name]);
 
             $this->setStatusCode(IlluminateResponse::HTTP_CREATED);
@@ -61,6 +66,8 @@ abstract class AbstractAPIController extends AbstractCRUDController
     {
         try {
             $updated = parent::update($request, $id);
+            if ($this->skipResponse) return $updated;
+
             $message = __('message.success.update', ['name' => $this->name]);
 
             $this->setStatusCode(IlluminateResponse::HTTP_ACCEPTED);
@@ -83,6 +90,8 @@ abstract class AbstractAPIController extends AbstractCRUDController
     {
         try {
             parent::destroy($id);
+            if ($this->skipResponse) return null;
+
             $message = __('message.success.destroy', ['name' => $this->name]);
 
             $this->setStatusCode(IlluminateResponse::HTTP_NO_CONTENT);

@@ -10,6 +10,11 @@ use Phumsoft\Phumpie\Models\Model;
 abstract class AbstractCRUDController extends Controller implements AbstractControllerInterface
 {
     /**
+     * @var bool
+     */
+    protected $skipResponse = false;
+
+    /**
      * @var object
      */
     protected object $module;
@@ -23,6 +28,11 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
      * @var string
      */
     protected string $fileKey = 'myFile';
+
+    public function __construct()
+    {
+        $this->skipResponse = $this->repository->skipPresenter;
+    }
 
     /**
      * Display a listing of the resource.
@@ -95,5 +105,19 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
     public function destroy(int $id)
     {
         return $this->repository->delete($id);
+    }
+
+    /**
+     * Skip Message Response
+     *
+     * @param bool $status
+     *
+     * @return $this
+     */
+    public function skipResponse($status = true)
+    {
+        $this->skipResponse = $status;
+
+        return $this;
     }
 }

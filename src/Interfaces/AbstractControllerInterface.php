@@ -48,4 +48,13 @@ interface AbstractControllerInterface
      * @return \Illuminate\Http\JsonResponse|bool
      */
     public function destroy(int $id);
+
+    /**
+     * Skip Message Response
+     *
+     * @param bool $status
+     *
+     * @return $this
+     */
+    public function skipResponse($status = true);
 }
