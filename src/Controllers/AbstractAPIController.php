@@ -12,7 +12,6 @@ abstract class AbstractAPIController extends AbstractCRUDController
 {
     public function __construct()
     {
-        parent::__construct();
     }
 
     /**
