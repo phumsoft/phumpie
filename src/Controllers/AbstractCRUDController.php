@@ -110,8 +110,7 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
     /**
      * Skip Message Response
      *
-     * @param bool $status
-     *
+     * @param  bool  $status
      * @return $this
      */
     public function skipResponse($status = true)

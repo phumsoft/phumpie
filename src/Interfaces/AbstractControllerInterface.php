@@ -52,8 +52,7 @@ interface AbstractControllerInterface
     /**
      * Skip Message Response
      *
-     * @param bool $status
-     *
+     * @param  bool  $status
      * @return $this
      */
     public function skipResponse($status = true);
