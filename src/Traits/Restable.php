@@ -67,15 +67,17 @@ trait Restable
             $message = Arr::get($message, 'message');
         }
         $data = is_null($data) || is_bool($data) ? [] : $data;
-        $data = array_merge(
-            $data,
+
+        $transformedData = ['data' => $data];
+        $transformedData = array_merge(
+            $transformedData,
             [
                 'message' => $message,
                 'status' => $this->getStatusCode(),
             ]
         );
 
-        return $this->respond($data, $headers);
+        return $this->respond($transformedData, $headers);
     }
 
     /**
