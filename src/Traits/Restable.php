@@ -79,7 +79,9 @@ trait Restable
      */
     protected function respondWithMessage(array|string $message = 'Item has been created.', mixed $data = [], array $headers = []): JsonResponse
     {
-        if ($this->skipResponse) return $data;
+        if ($this->skipResponse) {
+            return $data;
+        }
 
         if (is_array($message)) {
             $message = Arr::first($message, null, 'message');
@@ -112,7 +114,9 @@ trait Restable
      */
     protected function respondWithWarning(string $message = 'Warning', mixed $data = [], array $headers = []): JsonResponse
     {
-        if ($this->skipResponse) return $data;
+        if ($this->skipResponse) {
+            return $data;
+        }
         $this->setStatusCode(IlluminateResponse::HTTP_BAD_REQUEST);
 
         return $this->respond($message, $data, $headers);
@@ -128,7 +132,9 @@ trait Restable
      */
     protected function respondWithError(array|string $message, mixed $data = [], array $headers = []): JsonResponse
     {
-        if ($this->skipResponse) return $data;
+        if ($this->skipResponse) {
+            return $data;
+        }
 
         $this->setStatusCode(IlluminateResponse::HTTP_INTERNAL_SERVER_ERROR);
 
