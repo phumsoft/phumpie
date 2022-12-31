@@ -5,12 +5,15 @@ namespace Phumsoft\Phumpie\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response as IlluminateResponse;
-use Phumsoft\Phumpie\Constants\CAbility;
 use Phumsoft\Phumpie\Models\Model;
 use Prettus\Validator\Exceptions\ValidatorException;
 
 abstract class AbstractAPIController extends AbstractCRUDController
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,10 +22,6 @@ abstract class AbstractAPIController extends AbstractCRUDController
      */
     public function index(Request $request)
     {
-        if ($this->skipAuthorize === false) {
-            $this->authorize(CAbility::READ, $this->module);
-        }
-
         try {
             $items = parent::index($request);
 
