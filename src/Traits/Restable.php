@@ -59,13 +59,11 @@ trait Restable
      * Skip Message Response
      *
      * @param  bool  $status
-     * @return $this
+     * @return void
      */
-    public function skipResponse($status = true)
+    protected function skipResponse($status = true)
     {
         $this->skipResponse = $status;
-
-        return $this;
     }
 
     /**
@@ -75,9 +73,9 @@ trait Restable
      * @param  mixed  $data The given data
      * @param  mixed  $data The given data
      * @param  array  $headers The given headers
-     * @return JsonResponse The JSON-response
+     * @return mixed The JSON-response
      */
-    protected function respondWithMessage(array|string $message = 'Item has been created.', mixed $data = [], array $headers = []): JsonResponse
+    protected function respondWithMessage(array|string $message = 'Item has been created.', mixed $data = [], array $headers = []): mixed
     {
         if ($this->skipResponse) {
             return $data;
@@ -110,9 +108,9 @@ trait Restable
      * @param  string  $message The given message
      * @param  mixed  $data The given data
      * @param  array  $headers The headers that should be send with the JSON-response
-     * @return JsonResponse The JSON-response with the error code
+     * @return mixed The JSON-response with the error code
      */
-    protected function respondWithWarning(string $message = 'Warning', mixed $data = [], array $headers = []): JsonResponse
+    protected function respondWithWarning(string $message = 'Warning', mixed $data = [], array $headers = []): mixed
     {
         if ($this->skipResponse) {
             return $data;
@@ -128,9 +126,9 @@ trait Restable
      * @param  array|string  $message The given message
      * @param  mixed  $data The given data
      * @param  array  $headers The headers that should be send with the JSON-response
-     * @return JsonResponse The JSON-response with the error message
+     * @return mixed The JSON-response with the error message
      */
-    protected function respondWithError(array|string $message, mixed $data = [], array $headers = []): JsonResponse
+    protected function respondWithError(array|string $message, mixed $data = [], array $headers = []): mixed
     {
         if ($this->skipResponse) {
             return $data;
