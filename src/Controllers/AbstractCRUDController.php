@@ -6,9 +6,15 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Phumsoft\Phumpie\Interfaces\AbstractControllerInterface;
 use Phumsoft\Phumpie\Models\Model;
+use Phumsoft\Repository\Repositories\Repository;
 
 abstract class AbstractCRUDController extends Controller implements AbstractControllerInterface
 {
+    /**
+     * @var Repository
+     */
+    protected Repository $repository;
+
     /**
      * @var bool
      */
