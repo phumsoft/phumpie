@@ -31,11 +31,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
     protected bool $skipResponse = false;
 
     /**
-     * @var bool
-     */
-    protected bool $skipAuthorize = false;
-
-    /**
      * Display a listing of the resource.
      *
      * @param  Request  $request
@@ -43,10 +38,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
      */
     public function index(Request $request)
     {
-        if ($this->skipAuthorize === false) {
-            $this->authorize(CAbility::READ, $this->module);
-        }
-
         return $this->repository->toList();
     }
 
@@ -58,10 +49,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
      */
     public function store(Request $request)
     {
-        if ($this->skipAuthorize === false) {
-            $this->authorize(CAbility::CREATE, $this->module);
-        }
-
         $attributes = $request->all();
         $attributes[$this->fileKey] = null;
         $attributes['fileKey'] = $this->fileKey;
@@ -81,10 +68,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
      */
     public function show(Request $request, int $id)
     {
-        if ($this->skipAuthorize === false) {
-            $this->authorize(CAbility::READ, $this->name);
-        }
-
         return $this->repository->find($id);
     }
 
@@ -97,10 +80,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
      */
     public function update(Request $request, int $id)
     {
-        if ($this->skipAuthorize === false) {
-            $this->authorize(CAbility::UPDATE, $this->name);
-        }
-
         $attributes = $request->all();
         $attributes[$this->fileKey] = null;
         $attributes['fileKey'] = $this->fileKey;
@@ -121,10 +100,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
      */
     public function destroy(int $id)
     {
-        if ($this->skipAuthorize === false) {
-            $this->authorize(CAbility::DELETE, $this->name);
-        }
-
         return $this->repository->delete($id);
     }
 }
