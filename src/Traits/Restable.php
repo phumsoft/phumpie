@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Response;
 trait Restable
 {
     /**
+     * The default skip response.
+     *
+     * @var bool
+     */
+    protected bool $skipResponse = false;
+
+    /**
      * The default status code.
      *
      * @var int
@@ -49,6 +56,19 @@ trait Restable
     }
 
     /**
+     * Skip Message Response
+     *
+     * @param  bool  $status
+     * @return $this
+     */
+    public function skipResponse($status = true)
+    {
+        $this->skipResponse = $status;
+
+        return $this;
+    }
+
+    /**
      * Will return a response.
      *
      * @param  array|string  $message
@@ -59,6 +79,8 @@ trait Restable
      */
     protected function respondWithMessage(array|string $message = 'Item has been created.', mixed $data = [], array $headers = []): JsonResponse
     {
+        if ($this->skipResponse) return $data;
+
         if (is_array($message)) {
             $message = Arr::first($message, null, 'message');
         }
@@ -90,6 +112,7 @@ trait Restable
      */
     protected function respondWithWarning(string $message = 'Warning', mixed $data = [], array $headers = []): JsonResponse
     {
+        if ($this->skipResponse) return $data;
         $this->setStatusCode(IlluminateResponse::HTTP_BAD_REQUEST);
 
         return $this->respond($message, $data, $headers);
@@ -105,6 +128,8 @@ trait Restable
      */
     protected function respondWithError(array|string $message, mixed $data = [], array $headers = []): JsonResponse
     {
+        if ($this->skipResponse) return $data;
+
         $this->setStatusCode(IlluminateResponse::HTTP_INTERNAL_SERVER_ERROR);
 
         return $this->respondWithMessage($message, $data, $headers);
