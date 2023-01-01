@@ -32,5 +32,6 @@ class PhumpieServiceProvider extends ServiceProvider
      */
     private function publishResources()
     {
+        $this->loadTranslationsFrom(__DIR__ . '/../../../lang', 'phumpie');
     }
 }
