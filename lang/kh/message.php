@@ -2,13 +2,13 @@
 
 return [
     'success' => [
-        'create' => ':name has been created.',
-        'update' => ':name has been updated',
-        'destroy' => ':name has been destroyed.',
+        'create' => ':nameបានបង្កើតដោយជោគជ័យ',
+        'update' => ':nameបានកែប្រែដោយជោគជ័យ',
+        'destroy' => ':nameបានលុបដោយជោគជ័យ',
     ],
     'failed' => [
-        'destroy' => 'Failed to destroy :name.',
-        'update' => 'Failed to update :name.',
-        'create' => 'Failed to create :name.',
+        'create' => 'បរាជ័យក្នុងការបង្កើត:name',
+        'update' => 'បរាជ័យក្នុងកែប្រែ:name',
+        'destroy' => 'បរាជ័យក្នុងការលុប:name',
     ],
 ];

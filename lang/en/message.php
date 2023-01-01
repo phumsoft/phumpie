@@ -2,13 +2,13 @@
 
 return [
     'success' => [
-        'create' => ':name has been created.',
-        'update' => ':name has been updated',
-        'destroy' => ':name has been destroyed.',
+        'create' => ':name has been created successfully.',
+        'update' => ':name has been updated successfully',
+        'destroy' => ':name has been destroyed successfully.',
     ],
     'failed' => [
-        'destroy' => 'Failed to destroy :name.',
-        'update' => 'Failed to update :name.',
         'create' => 'Failed to create :name.',
+        'update' => 'Failed to update :name.',
+        'destroy' => 'Failed to destroy :name.',
     ],
 ];
