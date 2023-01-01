@@ -2,11 +2,11 @@
 
 namespace Phumsoft\Phumpie\Controllers;
 
+use App\Http\Controller\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Phumsoft\Phumpie\Interfaces\AbstractControllerInterface;
 use Phumsoft\Phumpie\Models\Model;
-use App\Http\Controller\Controller;
 
 abstract class AbstractCRUDController extends Controller implements AbstractControllerInterface
 {
