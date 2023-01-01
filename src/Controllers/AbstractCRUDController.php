@@ -2,7 +2,7 @@
 
 namespace Phumsoft\Phumpie\Controllers;
 
-use App\Http\Controller\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Phumsoft\Phumpie\Interfaces\AbstractControllerInterface;
