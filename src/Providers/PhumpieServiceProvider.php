@@ -22,7 +22,7 @@ class PhumpieServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishResources();
+        $this->publishResource();
     }
 
     /**
@@ -30,8 +30,8 @@ class PhumpieServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    private function publishResources()
+    private function publishResource()
     {
-        $this->loadTranslationsFrom(__DIR__ . '/../../../lang', 'phumpie');
+        $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'phumpie');
     }
 }
