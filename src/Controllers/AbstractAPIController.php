@@ -49,7 +49,7 @@ abstract class AbstractAPIController extends AbstractCRUDController
                 return $created;
             }
 
-            $message = __('phumpie::message.success.create', $this->getControllerNameTranslation());
+            $message = __('phumpie::message.success.create', $this->getNameTranslation());
 
             $this->setStatusCode(IlluminateResponse::HTTP_CREATED);
 
@@ -74,7 +74,7 @@ abstract class AbstractAPIController extends AbstractCRUDController
                 return $updated;
             }
 
-            $message = __('phumpie::message.success.update', $this->getControllerNameTranslation());
+            $message = __('phumpie::message.success.update', $this->getNameTranslation());
 
             $this->setStatusCode(IlluminateResponse::HTTP_ACCEPTED);
 
@@ -100,7 +100,7 @@ abstract class AbstractAPIController extends AbstractCRUDController
                 return null;
             }
 
-            $message = __('phumpie::message.success.destroy', $this->getControllerNameTranslation());
+            $message = __('phumpie::message.success.destroy', $this->getNameTranslation());
 
             $this->setStatusCode(IlluminateResponse::HTTP_NO_CONTENT);
 

@@ -11,17 +11,30 @@ trait ControllerTranslator
      *
      * @var string
      */
-    protected string $key = 'modal';
+    protected string $transKey = 'modal';
 
     /**
-     * Getter controller name translation.
+     * Getter controller name.
+     *
+     * @return string
+     */
+    protected function getName()
+    {
+        $tableName = $this->repository->getModel()->getTable();
+        $tableName = Str::singular($tableName);
+
+        return Str::camel($tableName);
+    }
+
+    /**
+     * Getter controller name with translation.
      *
      * @return array
      */
-    protected function getControllerNameTranslation()
+    protected function getNameTranslation()
     {
         $tableName = $this->repository->getModel()->getTable();
 
-        return ['name' => __($this->key . '.' . Str::camel($tableName))];
+        return ['name' => __($this->transKey . '.' . $this->getName())];
     }
 }
