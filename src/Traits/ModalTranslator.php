@@ -7,20 +7,13 @@ use Illuminate\Support\Str;
 trait ModalTranslator
 {
     /**
-     * The default key translation
-     *
-     * @var string
-     */
-    private string $key = 'phumpie::modal';
-
-    /**
-     * Get the controller key.
+     * Get the modal translation key.
      *
      * @return array
      */
-    protected function getModalKey()
+    protected function getModalTransKey()
     {
-        return trans()->has('vendor/phumpie.modal') ? 'vendor/phumpie.modal' : $this->key;
+        return trans()->has('vendor/phumpie.modal') ? 'vendor/phumpie.modal' : 'phumpie::modal';
     }
 
     /**
@@ -37,12 +30,12 @@ trait ModalTranslator
     }
 
     /**
-     * Getter controller name with translation.
+     * Getter modal name with translation.
      *
      * @return array
      */
-    protected function getNameTranslation()
+    protected function getNameTrans()
     {
-        return ['name' => __($this->getModalKey() . '.' . $this->getName())];
+        return ['name' => __($this->getModalTransKey() . '.' . $this->getName())];
     }
 }
