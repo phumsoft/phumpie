@@ -13,7 +13,7 @@ trait ModalTranslator
      */
     protected function getModalTransKey()
     {
-        return trans()->has('vendor/phumpie.modal') ? 'vendor/phumpie.modal' : 'phumpie::modal';
+        return 'modal';
     }
 
     /**

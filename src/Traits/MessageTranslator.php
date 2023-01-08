@@ -9,7 +9,7 @@ trait MessageTranslator
      *
      * @return string
      */
-    protected function getMessageKey()
+    protected function getMessageTransKey()
     {
         return trans()->has('vendor/phumpie.message') ? 'vendor/phumpie.message' : 'phumpie::message';
     }

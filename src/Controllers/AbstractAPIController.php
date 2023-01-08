@@ -49,7 +49,7 @@ abstract class AbstractAPIController extends AbstractCRUDController
                 return $created;
             }
 
-            $message = __($this->getMessageKey() . '.success.create', $this->getNameTrans());
+            $message = __($this->getMessageTransKey() . '.success.create', $this->getNameTrans());
 
             $this->setStatusCode(IlluminateResponse::HTTP_CREATED);
 
@@ -74,7 +74,7 @@ abstract class AbstractAPIController extends AbstractCRUDController
                 return $updated;
             }
 
-            $message = __($this->getMessageKey() . '.success.update', $this->getNameTrans());
+            $message = __($this->getMessageTransKey() . '.success.update', $this->getNameTrans());
 
             $this->setStatusCode(IlluminateResponse::HTTP_ACCEPTED);
 
@@ -100,7 +100,7 @@ abstract class AbstractAPIController extends AbstractCRUDController
                 return null;
             }
 
-            $message = __($this->getMessageKey() . '.success.destroy', $this->getNameTrans());
+            $message = __($this->getMessageTransKey() . '.success.destroy', $this->getNameTrans());
 
             $this->setStatusCode(IlluminateResponse::HTTP_NO_CONTENT);
 
