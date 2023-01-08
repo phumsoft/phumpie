@@ -33,8 +33,6 @@ trait ControllerTranslator
      */
     protected function getNameTranslation()
     {
-        $tableName = $this->repository->getModel()->getTable();
-
         return ['name' => __($this->transKey . '.' . $this->getName())];
     }
 }

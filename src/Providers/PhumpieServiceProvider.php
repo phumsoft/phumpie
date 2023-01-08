@@ -23,9 +23,7 @@ class PhumpieServiceProvider extends ServiceProvider
      */
     private function bootTranslation()
     {
-        $this->publishes([
-            __DIR__ . '/../../lang' => lang_path(),
-        ], 'phumpie');
+        $this->publishes([__DIR__ . '/../../lang' => lang_path('vendor/phumpie')]);
 
         $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'phumpie');
     }
