@@ -7,31 +7,26 @@ use Illuminate\Support\ServiceProvider;
 class PhumpieServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-    }
-
-    /**
      * Bootstrap any application services.
      *
      * @return void
      */
     public function boot()
     {
-        $this->publishResource();
+        $this->bootTranslation();
     }
 
     /**
-     * Publish resources.
+     * Boot Translation.
      *
      * @return void
      */
-    private function publishResource()
+    private function bootTranslation()
     {
+        $this->publishes([
+            __DIR__ . '/../../lang' => lang_path(),
+        ], 'phumpie');
+
         $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'phumpie');
     }
 }
