@@ -7,11 +7,12 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Phumsoft\Phumpie\Interfaces\AbstractControllerInterface;
 use Phumsoft\Phumpie\Models\Model;
-use Phumsoft\Phumpie\Traits\ControllerTranslator;
+use Phumsoft\Phumpie\Traits\MessageTranslator;
+use Phumsoft\Phumpie\Traits\ModalTranslator;
 
 abstract class AbstractCRUDController extends Controller implements AbstractControllerInterface
 {
-    use ControllerTranslator;
+    use ModalTranslator, MessageTranslator;
 
     /**
      * @var object

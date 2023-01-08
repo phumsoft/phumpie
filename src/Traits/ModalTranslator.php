@@ -4,14 +4,24 @@ namespace Phumsoft\Phumpie\Traits;
 
 use Illuminate\Support\Str;
 
-trait ControllerTranslator
+trait ModalTranslator
 {
     /**
      * The default key translation
      *
      * @var string
      */
-    protected string $transKey = 'modal';
+    private string $key = 'phumpie::modal';
+
+    /**
+     * Get the controller key.
+     *
+     * @return array
+     */
+    protected function getModalKey()
+    {
+        return trans()->has('vendor/phumpie.modal') ? 'vendor/phumpie.modal' : $this->key;
+    }
 
     /**
      * Getter controller name.
@@ -33,6 +43,6 @@ trait ControllerTranslator
      */
     protected function getNameTranslation()
     {
-        return ['name' => __($this->transKey . '.' . $this->getName())];
+        return ['name' => __($this->getModalKey() . '.' . $this->getName())];
     }
 }
