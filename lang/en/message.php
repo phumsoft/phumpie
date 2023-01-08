@@ -3,7 +3,7 @@
 return [
     'success' => [
         'create' => ':name has been created successfully.',
-        'update' => ':name has been updated successfully',
+        'update' => ':name has been updated successfully.',
         'destroy' => ':name has been destroyed successfully.',
     ],
     'failed' => [
