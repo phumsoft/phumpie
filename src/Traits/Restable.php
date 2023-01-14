@@ -100,7 +100,9 @@ trait Restable
         }
         $this->setStatusCode(IlluminateResponse::HTTP_BAD_REQUEST);
 
-        return $this->respond($message, $data, $headers);
+        $transformed = $this->transformer($message, $data);
+
+        return $this->respond($transformed, $headers);
     }
 
     /**
@@ -119,7 +121,9 @@ trait Restable
 
         $this->setStatusCode(IlluminateResponse::HTTP_INTERNAL_SERVER_ERROR);
 
-        return $this->respondWithMessage($message, $data, $headers);
+        $transformed = $this->transformer($message, $data);
+
+        return $this->respondWithMessage($transformed, $headers);
     }
 
     /**
