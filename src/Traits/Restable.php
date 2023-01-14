@@ -133,7 +133,7 @@ trait Restable
      * @param  mixed  $data Data to transform
      * @return array Transformed data
      */
-    private function transformer(string $message = 'Warning', mixed $data): mixed
+    private function transformer(string $message, mixed $data): mixed
     {
         if (is_array($message)) {
             $message = Arr::first($message, null, 'message');
