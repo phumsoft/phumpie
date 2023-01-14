@@ -80,26 +80,9 @@ trait Restable
         if ($this->skipResponse) {
             return $data;
         }
+        $transformed = $this->transformer($message, $data);
 
-        if (is_array($message)) {
-            $message = Arr::first($message, null, 'message');
-        }
-
-        if (is_array($message)) {
-            $message = Arr::get($message, 'message');
-        }
-        $data = is_null($data) || is_bool($data) ? [] : $data;
-
-        $transformedData = ['data' => $data];
-        $transformedData = array_merge(
-            $transformedData,
-            [
-                'message' => $message,
-                'status' => $this->getStatusCode(),
-            ]
-        );
-
-        return $this->respond($transformedData, $headers);
+        return $this->respond($transformed, $headers);
     }
 
     /**
@@ -137,5 +120,35 @@ trait Restable
         $this->setStatusCode(IlluminateResponse::HTTP_INTERNAL_SERVER_ERROR);
 
         return $this->respondWithMessage($message, $data, $headers);
+    }
+
+    /**
+     * Transform data format
+     *
+     * @param  array|string  $message The given message
+     * @param  mixed  $data Data to transform
+     * @return array Transformed data
+     */
+    private function transformer(string $message = 'Warning', mixed $data): mixed
+    {
+        if (is_array($message)) {
+            $message = Arr::first($message, null, 'message');
+        }
+
+        if (is_array($message)) {
+            $message = Arr::get($message, 'message');
+        }
+        $data = is_null($data) || is_bool($data) ? [] : $data;
+
+        $transformed = ['data' => $data];
+        $transformed = array_merge(
+            $transformed,
+            [
+                'message' => $message,
+                'status' => $this->getStatusCode(),
+            ]
+        );
+
+        return $transformed;
     }
 }
