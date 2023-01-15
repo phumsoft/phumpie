@@ -90,16 +90,19 @@ trait Restable
         }
         $data = is_null($data) || is_bool($data) ? [] : $data;
 
-        $transformedData = ['data' => $data];
-        $transformedData = array_merge(
-            $transformedData,
+        $transformed = $data;
+        if (!Arr::exists($data, 'data')) {
+            $transformed = ['data' => $data];
+        }
+        $transformed = array_merge(
+            $transformed,
             [
                 'message' => $message,
                 'status' => $this->getStatusCode(),
             ]
         );
 
-        return $this->respond($transformedData, $headers);
+        return $this->respond($transformed, $headers);
     }
 
     /**
