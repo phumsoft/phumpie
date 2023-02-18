@@ -11,15 +11,11 @@ trait Restable
 {
     /**
      * The default skip response.
-     *
-     * @var bool
      */
     protected bool $skipResponse = false;
 
     /**
      * The default status code.
-     *
-     * @var int
      */
     protected int $statusCode = IlluminateResponse::HTTP_OK;
 
@@ -69,7 +65,6 @@ trait Restable
     /**
      * Will return a response.
      *
-     * @param  array|string  $message
      * @param  mixed  $data The given data
      * @param  mixed  $data The given data
      * @param  array  $headers The given headers

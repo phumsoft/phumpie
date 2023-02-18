@@ -21,7 +21,6 @@ function convertQueryParams($string_params)
 }
 
 /**
- * @param $search
  * @return array
  */
 function parserSearchData($search)

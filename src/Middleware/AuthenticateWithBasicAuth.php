@@ -12,8 +12,6 @@ class AuthenticateWithBasicAuth
      * Handle an incoming request.
      *
      * @param  Request  $request
-     * @param  Closure  $next
-     * @return mixed
      *
      * @throws BindingResolutionException
      */

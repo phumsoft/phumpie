@@ -14,14 +14,8 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
 {
     use ModalTranslator, MessageTranslator;
 
-    /**
-     * @var object
-     */
     protected object $module;
 
-    /**
-     * @var string
-     */
     protected string $fileKey = 'myFile';
 
     public function __construct()
@@ -31,7 +25,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
     /**
      * Display a listing of the resource.
      *
-     * @param  Request  $request
      * @return mixed
      */
     public function index(Request $request)
@@ -42,7 +35,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
      * @return JsonResponse|Model
      */
     public function store(Request $request)
@@ -60,8 +52,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
     /**
      * Display the specified resource.
      *
-     * @param  Request  $request
-     * @param  int  $id
      * @return JsonResponse
      */
     public function show(Request $request, int $id)
@@ -72,8 +62,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
-     * @param  int  $id
      * @return JsonResponse|Model
      */
     public function update(Request $request, int $id)
@@ -91,7 +79,6 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
      * @return JsonResponse|bool
      *
      * @throws Throwable

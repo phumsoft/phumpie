@@ -17,7 +17,6 @@ abstract class AbstractAPIController extends AbstractCRUDController
     /**
      * Display a listing of the resource.
      *
-     * @param  Request  $request
      * @return mixed
      */
     public function index(Request $request)
@@ -38,7 +37,6 @@ abstract class AbstractAPIController extends AbstractCRUDController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
      * @return \Illuminate\Http\Response|Model
      */
     public function store(Request $request)
@@ -62,8 +60,6 @@ abstract class AbstractAPIController extends AbstractCRUDController
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response|Phumsoft\Phumpie\Models\Model
      */
     public function update(Request $request, int $id)
@@ -87,7 +83,6 @@ abstract class AbstractAPIController extends AbstractCRUDController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response|Phumsoft\Phumpie\Models\Model
      *
      * @throws Throwable
