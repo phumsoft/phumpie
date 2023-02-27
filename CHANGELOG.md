@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/phumsoft/phumpie/compare/v1.0.0...v1.1.0) (2023-02-27)
+
+
+### Features
+
+* :sparkles: ignore exporting paths while exporting to packagist ([87c8e47](https://github.com/phumsoft/phumpie/commit/87c8e476392ede65ce2a5ea52028a18dca1c961b))
+* :sparkles: run dependabot with timezone in Phnom Penh ([56cd211](https://github.com/phumsoft/phumpie/commit/56cd211b0df520f9f7b7994e35c063bd87f9687e))
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump eslint from 8.34.0 to 8.35.0 ([88dbf9e](https://github.com/phumsoft/phumpie/commit/88dbf9e98afe9e53b7bbbff86b813c83b1837966))
+
 ## [1.0.0](https://github.com/phumsoft/phumpie/compare/v1.0.0...v1.0.0) (2023-02-23)
 
 
