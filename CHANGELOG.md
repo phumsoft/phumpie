@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/phumsoft/phumpie/compare/v1.1.0...v1.1.1) (2023-03-15)
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump eslint from 8.35.0 to 8.36.0 ([eff23bf](https://github.com/phumsoft/phumpie/commit/eff23bf7b00bc3b11b5516fe020cdc4d6b491f2d))
+
 ## [1.1.0](https://github.com/phumsoft/phumpie/compare/v1.0.0...v1.1.0) (2023-02-27)
 
 
