@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.3](https://github.com/phumsoft/phumpie/compare/v1.1.2...v1.1.3) (2023-04-07)
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump @commitlint/cli from 17.5.0 to 17.5.1 ([fb8c343](https://github.com/phumsoft/phumpie/commit/fb8c343669aa7a690d24d64c73ff728378fea50a))
+* **deps-dev:** bump eslint from 8.36.0 to 8.37.0 ([d87733a](https://github.com/phumsoft/phumpie/commit/d87733a1e32694152e1af6eae0f1f1b4cf5f8bb1))
+
 ## [1.1.2](https://github.com/phumsoft/phumpie/compare/v1.1.1...v1.1.2) (2023-03-24)
 
 
