@@ -14,7 +14,7 @@ abstract class AbstractCRUDController extends Controller implements AbstractCont
 {
     use ModalTranslator, MessageTranslator;
 
-    protected object $module;
+    protected string $module;
 
     protected string $fileKey = 'myFile';
 
