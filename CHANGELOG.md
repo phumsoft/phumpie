@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.0](https://github.com/phumsoft/phumpie/compare/v1.1.5...v1.2.0) (2023-09-17)
+
+
+### Features
+
+* :sparkles: support illuminate version 8.0 ([4fb82b8](https://github.com/phumsoft/phumpie/commit/4fb82b86014f7c852ab0c6e9f82507b9fa9507e1))
+
+
+### Bug Fixes
+
+* **deps:** bump actions/checkout from 3 to 4 ([2d177b0](https://github.com/phumsoft/phumpie/commit/2d177b06bc5509fbecc0fb26052015c68e50c1e7))
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump eslint from 8.47.0 to 8.49.0 ([dfb5483](https://github.com/phumsoft/phumpie/commit/dfb5483ef7b7b33fec48e5cc29fea3b763e40cdf))
+
 ## [1.1.5](https://github.com/phumsoft/phumpie/compare/v1.1.4...v1.1.5) (2023-08-25)
 
 
